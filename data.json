@@ -1,0 +1,7 @@
+{
+    "groupe1": {
+        "key1": "123",
+        "key_1": "This is an example text file.\nYou can use it to test the file tree functionality.",
+        "key_2": "# This is an example Python file.\ndef example_function():\n    print('Hello, world!')\n"
+    }
+}

@@ -1,0 +1,2 @@
+This is an example text file.
+You can use it to test the file tree functionality.
