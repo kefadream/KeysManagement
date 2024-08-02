@@ -18,7 +18,7 @@ class DirectoryManager:
         return file_structure
 
     def change_directory(self):
-        new_dir = filedialog.askdirectory(initialdir=self.default_dir, title="Choisissez un répertoire")
+        new_dir = filedialog.askdirectory(initialdir=self.default_dir, title="Choose a directory")
         if new_dir:
             self.default_dir = new_dir
         return self.default_dir

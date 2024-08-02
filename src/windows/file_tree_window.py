@@ -16,7 +16,7 @@ class FileTreeWindow:
         self.logger = logging.getLogger(self.__class__.__name__)
 
         self.window = tk.Toplevel(master)
-        self.window.title("Création de clé avec fichier")
+        self.window.title("Create key with file")
 
         self.create_widgets()
 
@@ -25,22 +25,22 @@ class FileTreeWindow:
         self.frame.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
 
         self.tree = ttk.Treeview(self.frame)
-        self.tree.heading("#0", text="Fichiers", anchor='w')
+        self.tree.heading("#0", text="Files", anchor='w')
         self.tree.pack(fill=tk.BOTH, expand=True)
 
         self.tree.bind("<Button-3>", self.show_context_menu)
 
         self.context_menu = tk.Menu(self.window, tearoff=0)
-        self.context_menu.add_command(label="Ajouter contenu à une clé existante", command=self.add_to_existing_key)
-        self.context_menu.add_command(label="Créer une nouvelle clé avec ce contenu", command=self.create_new_key)
+        self.context_menu.add_command(label="Add content to an existing key", command=self.add_to_existing_key)
+        self.context_menu.add_command(label="Create a new key with this content", command=self.create_new_key)
 
         try:
             self.load_directory(self.directory_manager.default_dir)
         except Exception as e:
             self.logger.error(f"Failed to load directory: {e}")
-            messagebox.showerror("Erreur", f"Échec du chargement du répertoire: {e}")
+            messagebox.showerror("Error", f"Failed to load directory: {e}")
 
-        self.change_dir_button = ttk.Button(self.frame, text="Changer de répertoire", command=self.change_directory)
+        self.change_dir_button = ttk.Button(self.frame, text="Change directory", command=self.change_directory)
         self.change_dir_button.pack(pady=5)
 
     def load_directory(self, path):
@@ -62,7 +62,7 @@ class FileTreeWindow:
                 AddToExistingKeyWindow(self.window, self.storage, self.groups, content)
             except Exception as e:
                 self.logger.error(f"Failed to read file '{file_path}': {e}")
-                messagebox.showerror("Erreur", f"Échec de la lecture du fichier '{file_path}': {e}")
+                messagebox.showerror("Error", f"Failed to read file '{file_path}': {e}")
 
     def create_new_key(self):
         selected_item = self.tree.selection()
@@ -74,7 +74,7 @@ class FileTreeWindow:
                 CreateNewKeyWindow(self.window, self.storage, self.groups, content)
             except Exception as e:
                 self.logger.error(f"Failed to read file '{file_path}': {e}")
-                messagebox.showerror("Erreur", f"Échec de la lecture du fichier '{file_path}': {e}")
+                messagebox.showerror("Error", f"Failed to read file '{file_path}': {e}")
 
     def change_directory(self):
         new_dir = self.directory_manager.change_directory()
@@ -82,4 +82,4 @@ class FileTreeWindow:
             self.load_directory(new_dir)
         except Exception as e:
             self.logger.error(f"Failed to change directory to '{new_dir}': {e}")
-            messagebox.showerror("Erreur", f"Échec du changement de répertoire vers '{new_dir}': {e}")
+            messagebox.showerror("Error", f"Failed to change directory to '{new_dir}': {e}")
