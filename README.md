@@ -26,15 +26,12 @@ To get started with the project, follow the setup instructions in `setup.md`.
 - [Contributing](docs/contributing.md)
 - [Changelog](docs/changelog.md)
 
+
 ## Preview
-### Group creation
-![app1](https://github.com/user-attachments/assets/df173497-8da5-4f58-b491-f537e93d204d)
+### Main Interface
+![main](https://github.com/user-attachments/assets/4243ad3b-4b87-492f-b5f6-c0723768c7ed)
 
-### Key Creation
-![app2](https://github.com/user-attachments/assets/438dc80c-9b66-4699-a87f-e00a987d559f)
+### File Tree Key Creation Window
+![create_key_with_file](https://github.com/user-attachments/assets/7677a396-0941-40c5-a6a4-2418f9ef0a5b)
 
-### Empty Key Creation
-![app3](https://github.com/user-attachments/assets/85489728-fcfa-450d-b873-946ab7d95d6f)
 
-### Key with File Creation
-![app4](https://github.com/user-attachments/assets/2978f060-fc62-4633-916f-7bf89498ccb6)
